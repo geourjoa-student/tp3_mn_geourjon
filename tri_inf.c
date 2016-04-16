@@ -18,9 +18,9 @@ void tri_inf(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
     for(i=0;i<N;i++){
         s=0;
         for(j=0;j<i;j++){
-            s = s+M[i][j]*V_res[j];
+            s = s+m[i][j]*res[j];
         }
-        V_res[i]=(V[i]-s)/M[i][i];
+        res[i]=(v[i]-s)/m[i][i];
     }
 }
 
