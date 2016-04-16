@@ -1,13 +1,31 @@
-all: diag
+CC=gcc
+CFLAGS=-W -Wall
+LDFLAGS=
+EXEC=diag tri_inf tri_sup
 
-diag : init.o diag.o
-	gcc -o diag init.o diag.o
+all: $(EXEC)
 
-init.o: init.c 
-	gcc -o init.o -c init.c
+diag: init.o diag.o
+	$(CC) -o $@ $^ $(LDFLAGS)
+	
+tri_inf: init.o tri_inf.o
+	$(CC) -o $@ $^ $(LDFLAGS)	
+	
+tri_sup: init.o tri_sup.o
+	$(CC) -o $@ $^ $(LDFLAGS)	
 
-diag.o: diag.c init.h
-	gcc -o diag.o -c diag.c
+diag.o: init.h
+
+tri_inf.o: init.h
+
+tri_sup.o: init.h
+
+%.o: %.c
+	$(CC) -o $@ -c $< $(CFLAGS)
+
 
 clean:
 	rm -rf *.o
+	
+mrproper :
+		rm $(EXEC)

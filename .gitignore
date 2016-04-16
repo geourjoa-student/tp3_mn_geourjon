@@ -1,3 +1,7 @@
 /diag
 /diag.o
 /init.o
+/tri_inf
+/tri_inf.o
+/tri_sup
+/tri_sup.o
