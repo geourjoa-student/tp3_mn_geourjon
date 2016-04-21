@@ -17,13 +17,16 @@ void diag(matricefloat_t A, vecteurfloat_t x, vecteurfloat_t b){
     }
 }
 
-int main(int argc, char **argv)
+int main()
 {	
 	matricefloat_t m;
     vecteurfloat_t v,res; 
     
     init_vect(v);
     init_mat_diag(m);
+    
+    printf("Résolution d'une matrice diagonale.\n");
+    
     diag(m,v,res);
 	
 	return 0;

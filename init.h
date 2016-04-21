@@ -36,7 +36,8 @@
 	void init_mat_optimisee_tri_sup(matriceOptimiseefloat_t m);
 	*/
 	
-	
+	//Définition de type pour la vectorisation
+	typedef float float4 [4] __attribute__ ((aligned(16)));
 	
 
 #endif /* #ifndef _INIT_H_ */

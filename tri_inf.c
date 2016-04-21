@@ -24,13 +24,16 @@ void tri_inf(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
     }
 }
 
-int main(int argc, char **argv)
+int main()
 {
 	matricefloat_t m;
-    	vecteurfloat_t v,res; 
+    vecteurfloat_t v,res; 
     
 	init_vect(v);
 	init_mat_diag(m);
+	
+	printf("Résolution de système matrice inférieur.\n");
+	
 	tri_inf(m,v,res);
     
 	return EXIT_SUCCESS;

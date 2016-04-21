@@ -26,13 +26,16 @@ void tri_sup(matricefloat_t m, vecteurfloat_t v){
     }
 }
 
-int main(int argc, char **argv)
+int main()
 {
 	matricefloat_t m;
     vecteurfloat_t v; 
     
     init_vect(v);
     init_mat_diag(m);
+    
+    printf("Résolution de système matrice inférieur.\n");
+    
     tri_sup(m,v);
     
 	return 0;
