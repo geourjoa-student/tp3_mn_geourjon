@@ -14,7 +14,7 @@
 //résolution du système avec matrice inférieure
 void tri_inf(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
  
-    int i,j,s=0;
+    int i,j,s;
     for(i=0;i<N;i++){
         s=0;
         for(j=0;j<i;j++){
@@ -27,12 +27,12 @@ void tri_inf(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
 int main(int argc, char **argv)
 {
 	matricefloat_t m;
-    vecteurfloat_t v,res; 
+    	vecteurfloat_t v,res; 
     
-    init_vect(v);
-    init_mat_diag(m);
-    tri_inf(m,v,res);
+	init_vect(v);
+	init_mat_diag(m);
+	tri_inf(m,v,res);
     
-	return 0;
+	return EXIT_SUCCESS;
 }
 
