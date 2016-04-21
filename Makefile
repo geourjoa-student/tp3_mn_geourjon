@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-W -Wall -O2
 LDFLAGS=
-EXEC=diag tri_inf tri_sup tri_inf_vecto tri_sup_vecto produit_scalaire_vecto produit_matricielle_vecto
+EXEC=diag tri_inf tri_sup tri_inf_vecto tri_sup_vecto produit_scalaire_vecto produit_matricielle_vecto clean
 
 all: $(EXEC)
 
