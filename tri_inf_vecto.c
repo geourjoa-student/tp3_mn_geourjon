@@ -15,7 +15,7 @@ typedef float float4 [4] __attribute__ ((aligned(16)));
 
 void tri_inf_vecto(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
     int i,j;
-    __m128 _va,_vb,_vecteur_somme,_vres,_vc,_vd, _tmp;
+    __m128 _va,_vb,_vecteur_somme,_vres,_vc,_vd, tmp;
     
     float4 somme_temporaire = {0,0,0,0};
     
@@ -37,8 +37,8 @@ void tri_inf_vecto(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
 			_vb = _mm_load_ps(b);
 			
 			//0xFF Masque constant pour qque tous l'octet soit multiplié
-			_tmp = _mm_dp_ps(_va,_vb,0xFF);
-			_vecteur_somme = _mm_add_ps(_vecteur_somme, _tmp);
+			//tmp = _mm_dp_ps(_va,_vb,0xFF);
+			_vecteur_somme = _mm_add_ps(_vecteur_somme, tmp);
 			
 			//ici _vecteur_somme = _vecteur_somme + _va * _vb
         }
@@ -65,8 +65,8 @@ int main(int argc, char **argv)
 	matricefloat_t m;
 	vecteurfloat_t v, res;
 
-    init_vect(v);
-    init_mat_tri_inf(m);
+    	init_vect(v);
+    	init_mat_tri_inf(m);
    
 	tri_inf_vecto(m,v,res); 
 	

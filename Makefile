@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-W -Wall
+CFLAGS=-W -Wall -O2
 LDFLAGS=
 EXEC=diag tri_inf tri_sup tri_inf_vecto
 
@@ -15,7 +15,7 @@ tri_sup: init.o tri_sup.o
 	$(CC) -o $@ $^ $(LDFLAGS)	
 
 tri_inf_vecto: init.o tri_inf_vecto.o
-	$(CC) -o $@ $^ $(LDFLAGS)	
+	$(CC) -msse4.1 -o $@ $^ $(LDFLAGS)	
 
 diag.o: init.h
 
