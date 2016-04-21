@@ -11,15 +11,15 @@
 
 #include "init.h"
 
-typedef float float4 [4] __attribute__ ((aligned(16)));
-
 void tri_inf_vecto(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
     int i,j;
-    __m128 _va,_vb,_vecteur_somme,_vres,_vc,_vd, tmp;
+    __m128 _va,_vb,_vecteur_somme,_vres,_vc,_vd;
     
     float4 somme_temporaire = {0,0,0,0};
     
     for(i=0;i<N;i+=4){
+		
+		float4 resultat = {res[i],res[i+1],res[i+2],res[i+3]};
         
        
         _vecteur_somme = _mm_load_ps(somme_temporaire);
@@ -37,8 +37,7 @@ void tri_inf_vecto(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
 			_vb = _mm_load_ps(b);
 			
 			//0xFF Masque constant pour qque tous l'octet soit multiplié
-			//tmp = _mm_dp_ps(_va,_vb,0xFF);
-			_vecteur_somme = _mm_add_ps(_vecteur_somme, tmp);
+			_vecteur_somme = _mm_add_ps(_vecteur_somme, _mm_mul_ps(_va,_vb));
 			
 			//ici _vecteur_somme = _vecteur_somme + _va * _vb
         }
@@ -52,12 +51,12 @@ void tri_inf_vecto(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
 		// ici _vres = (_vc - _vecteur_somme) / _vd
 		
 		// TODO Comment enregister le résultat ?
-		//_mm_store_ps (b, _vres);
+		_mm_store_ps (resultat, _vres);
     }    
 }
 
 
-int main(int argc, char **argv)
+int main()
 {
 	
 	printf("Résolution matrice triangulaire inférieure avec vectorisation.\n");
@@ -65,8 +64,8 @@ int main(int argc, char **argv)
 	matricefloat_t m;
 	vecteurfloat_t v, res;
 
-    	init_vect(v);
-    	init_mat_tri_inf(m);
+	init_vect(v);
+	init_mat_tri_inf(m);
    
 	tri_inf_vecto(m,v,res); 
 	
