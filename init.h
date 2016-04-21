@@ -29,12 +29,12 @@
 	//Matrice
 	/*typedef vecteurfloat_t matriceOptimiseefloat_t [N]; 
 	
-	void init_vect (vecteurfloat_t v);*/
+	void init_vect (vecteurfloat_t v);
 	
-	void init_mat_optimisee_tri_inf(matriceOptimiseefloat_t);
+	void init_mat_optimisee_tri_inf(matriceOptimiseefloat_t m);
 	
-	void init_mat_optimisee_tri_sup(matriceOptimiseefloat_t);
-	
+	void init_mat_optimisee_tri_sup(matriceOptimiseefloat_t m);
+	*/
 	
 	
 	

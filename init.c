@@ -66,13 +66,14 @@ void init_mat_tri_sup (matricefloat_t m)
         }
     return ;
 }
-
-void init_mat_optimisee_tri_inf(matriceOptimiseefloat_t)
+/*
+void init_mat_optimisee_tri_inf(matriceOptimiseefloat_t m)
 {
 	//TODO
 }
 	
-void init_mat_optimisee_tri_sup(matriceOptimiseefloat_t)
+void init_mat_optimisee_tri_sup(matriceOptimiseefloat_t m)
 {
 	//TODO
 }
+*/
