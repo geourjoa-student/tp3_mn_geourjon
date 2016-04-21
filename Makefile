@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-W -Wall
 LDFLAGS=
-EXEC=diag tri_inf tri_sup
+EXEC=diag tri_inf tri_sup tri_inf_vecto
 
 all: $(EXEC)
 
@@ -14,11 +14,16 @@ tri_inf: init.o tri_inf.o
 tri_sup: init.o tri_sup.o
 	$(CC) -o $@ $^ $(LDFLAGS)	
 
+tri_inf_vecto: init.o tri_inf_vecto.o
+	$(CC) -o $@ $^ $(LDFLAGS)	
+
 diag.o: init.h
 
 tri_inf.o: init.h
 
 tri_sup.o: init.h
+
+tri_inf_vecto.o : init.h
 
 %.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
