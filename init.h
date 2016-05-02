@@ -24,17 +24,11 @@
 	void init_mat_tri_sup (matricefloat_t m);
 
 	
-	//Vesrion optimisée des programmes
+	//Version optimisée des programmes
+		
+	typedef float** matriceOptimiseefloat_t;
 	
-	//Matrice
-	/*typedef vecteurfloat_t matriceOptimiseefloat_t [N]; 
-	
-	void init_vect (vecteurfloat_t v);
-	
-	void init_mat_optimisee_tri_inf(matriceOptimiseefloat_t m);
-	
-	void init_mat_optimisee_tri_sup(matriceOptimiseefloat_t m);
-	*/
+	void init_mat_optimisee(matriceOptimiseefloat_t m);
 	
 	//Définition de type pour la vectorisation
 	typedef float float4 [4] __attribute__ ((aligned(16)));

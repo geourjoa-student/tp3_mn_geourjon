@@ -12,27 +12,26 @@
 #include "init.h"
 
 //résolution du système avec matrice inférieure
-void tri_inf(matricefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
+void tri_inf(matriceOptimiseefloat_t m, vecteurfloat_t v, vecteurfloat_t res){
  
     	int i,j;
 	float s=0;
 
-	for(i=0;i<N;i++){
-		s=0;
-		for(j=0;j<i;j++){
-			s = s+m[i][j]*res[j];
+	for(i= 0 ; i < N ; i++){
+		for(j=0; j <i ; j++){
+			s= (v[i]-m[i][j]*v[j])/m[i][i];
 		}
-		res[i]=(v[i]-s)/m[i][i];
+		res[i]=s;
 	}
 }
 
 int main()
 {
-	matricefloat_t m;
+	matriceOptimiseefloat_t m;
     	vecteurfloat_t v,res; 
     
 	init_vect(v);
-	init_mat_diag(m);
+	init_mat_optimisee(m);
 	
 	printf("Résolution de système matrice inférieur.\n");
 	

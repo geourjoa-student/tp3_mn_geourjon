@@ -66,14 +66,15 @@ void init_mat_tri_sup (matricefloat_t m)
         }
     return ;
 }
-/*
-void init_mat_optimisee_tri_inf(matriceOptimiseefloat_t m)
+
+void init_mat_optimisee(matriceOptimiseefloat_t m)
 {
-	//TODO
+	int i;
+	m = malloc(sizeof(float*)*N);
+	for(i=0;i<N;i++)
+	{
+		m[i]=malloc(sizeof(float)*(i+1));
+	}
 }
 	
-void init_mat_optimisee_tri_sup(matriceOptimiseefloat_t m)
-{
-	//TODO
-}
-*/
+

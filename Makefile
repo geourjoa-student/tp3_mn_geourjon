@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS=-W -Wall -O2
 LDFLAGS=
-EXEC=diag tri_inf tri_sup tri_inf_vecto tri_sup_vecto produit_scalaire_vecto produit_matricielle_vecto clean
+EXEC=diag tri_inf tri_sup tri_inf_vecto tri_sup_vecto produit_scalaire_vecto produit_matricielle_vecto tri_inf_opti tri_sup_opti 
 
-all: $(EXEC)
+all: $(EXEC) clean
 
 diag: init.o diag.o
 	$(CC) -o $@ $^ 
@@ -13,6 +13,12 @@ tri_inf: init.o tri_inf.o
 	
 tri_sup: init.o tri_sup.o
 	$(CC) -o $@ $^ 	
+
+tri_inf_opti: init.o tri_inf_vecto.o
+	$(CC) -O2 -o $@ $^ 
+	
+tri_sup_opti: init.o tri_sup_vecto.o
+	$(CC) -O2 -o $@ $^ 
 
 tri_inf_vecto: init.o tri_inf_vecto.o
 	$(CC) -O2 -o $@ $^ 
@@ -32,6 +38,10 @@ tri_inf.o: init.h
 
 tri_sup.o: init.h
 
+tri_inf_opti.o: init.h
+
+tri_sup_opti.o: init.h
+
 tri_inf_vecto.o : init.h
 
 tri_sup_vecto.o : init.h
@@ -48,4 +58,4 @@ clean:
 	rm -rf *.o
 	
 mrproper :
-		rm $(EXEC)
+	rm $(EXEC)
