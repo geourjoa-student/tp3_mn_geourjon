@@ -1,8 +1,7 @@
 **********************************************
-		TP3 MN 
+		Compte rendu TP3 MN 
 **********************************************
 
-J'ai effectué ce TP seul, mon ancien binôme Timothée Lemaire ayant été absent toute la fin du semestre (justifié). Je vous laisse vous arranger avec lui pour la notation.
 Le sujet n'a pas été traité en intégralité (trop long pour une seule personne), je n'ai pas traité tri_inf et tri_sup avec optimisation de la réprésentation d'une matrice.
 Pour l'évaluation des performance, perf ne m'indique pas le taux de branchements manqués. Peut être est ce du à mon processuer (relativement vieux) qui ne calcule pas cette métrique.
 Il vous est possible de réévaluer facilement les performances avec le script bash "script_cr.sh" qui générera un fichier résumant les actions de perf sur tout les programmes.
