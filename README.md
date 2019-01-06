@@ -1,5 +1,5 @@
 **********************************************
-		Compte rendu TP3 MN 
+			Compte rendu TP3 Méthodes numériques (vectorisation et optimisation
 **********************************************
 
 Le sujet n'a pas été traité en intégralité (trop long pour une seule personne), je n'ai pas traité tri_inf et tri_sup avec optimisation de la réprésentation d'une matrice.
